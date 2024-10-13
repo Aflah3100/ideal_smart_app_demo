@@ -19,7 +19,6 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //Base-container
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 25.w),
         width: MediaQuery.sizeOf(context).width,
@@ -29,115 +28,131 @@ class LoginScreen extends StatelessWidget {
                 image: AssetImage(Assets.backgroundImage), fit: BoxFit.fill)),
         child: SafeArea(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               //Top-heading
-              const Image(
-                image: AssetImage(Assets.appHeading),
-                alignment: Alignment.center,
-              ),
-
-              Text(
-                "Shop Smart,Save\nBig on Groceries",
-                style: AppFonts.poppins(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w500),
-              ),
-
-              //Siign-in-container
-              Container(
-                width: MediaQuery.sizeOf(context).width,
-                height: 290.h,
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(25)),
-                child: Form(
-                  key: formKey,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      //Login-heading
-                      const LoginHeading(),
-
-                      //Email-text-field
-                      InputTextField(
-                        validator: (email) {
-                          return (email!.isEmpty)
-                              ? "Please enter your email"
-                              : null;
-                        },
-                        controller: emailController,
-                        hintText: 'Email',
-                        prefixIcon: const Icon(
-                          Icons.email,
-                          color: Colors.grey,
-                        ),
-                      ),
-
-                      //Password-Text-field
-                      SecureTextField(
-                          validator: (password) {
-                            return (password!.isEmpty)
-                                ? "Password cannot be empty"
-                                : null;
-                          },
-                          controller: passwordController,
-                          icon: const Icon(
-                            Icons.email,
-                            color: Colors.grey,
-                          ),
-                          hintText: "Password"),
-
-                      Column(
-                        children: [
-                          //Login-button
-                          AuthenticationButton(
-                            label: 'Login',
-                            onTap: () {
-                              if (formKey.currentState!.validate()) {}
-                            },
-                          ),
-
-                          //Forgot-password-button
-                          TextButton(
-                              onPressed: () {},
-                              child: Text('Forgot Password?',
-                                  style:
-                                      AppFonts.poppins(color: Colors.black))),
-                        ],
-                      )
-                    ],
-                  ),
+              Padding(
+                padding: EdgeInsets.only(top: 20.h),
+                child: const Image(
+                  image: AssetImage(Assets.appHeading),
+                  alignment: Alignment.center,
                 ),
               ),
+              const Spacer(),
 
-              Row(
+              Column(
                 mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    'Don\'t have an account?  ',
+                    "Shop Smart, Save\nBig on Groceries",
                     style: AppFonts.poppins(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pushNamed(context, SignUpScreen.routeName);
-                    },
-                    child: Text(
-                      'Register',
-                      style: AppFonts.poppins(
                         color: Colors.white,
-                        fontWeight: FontWeight.w500,
+                        fontSize: 18.sp,
+                        fontWeight: FontWeight.w500),
+                  ),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+
+                  //Sign-in-container
+                  Container(
+                    width: MediaQuery.sizeOf(context).width,
+                    height: 290.h,
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(25)),
+                    child: Form(
+                      key: formKey,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          //Login-heading
+                          const LoginHeading(),
+
+                          //Email-text-field
+                          InputTextField(
+                            validator: (email) {
+                              return (email!.isEmpty)
+                                  ? "Please enter your email"
+                                  : null;
+                            },
+                            controller: emailController,
+                            hintText: 'Email',
+                            prefixIcon: const Icon(
+                              Icons.email,
+                              color: Colors.grey,
+                            ),
+                          ),
+
+                          //Password-Text-field
+                          SecureTextField(
+                              validator: (password) {
+                                return (password!.isEmpty)
+                                    ? "Password cannot be empty"
+                                    : null;
+                              },
+                              controller: passwordController,
+                              icon: const Icon(
+                                Icons.lock,
+                                color: Colors.grey,
+                              ),
+                              hintText: "Password"),
+
+                          Column(
+                            children: [
+                              //Login-button
+                              AuthenticationButton(
+                                label: 'Login',
+                                onTap: () {
+                                  if (formKey.currentState!.validate()) {}
+                                },
+                              ),
+
+                              //Forgot-password-button
+                              TextButton(
+                                  onPressed: () {},
+                                  child: Text('Forgot Password?',
+                                      style: AppFonts.poppins(
+                                          color: Colors.black))),
+                            ],
+                          )
+                        ],
                       ),
                     ),
                   ),
+                  SizedBox(
+                    height: 10.h,
+                  ),
+
+                  //Register-text
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Don\'t have an account?  ',
+                        style: AppFonts.poppins(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, SignUpScreen.routeName);
+                        },
+                        child: Text(
+                          'Register',
+                          style: AppFonts.poppins(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                    ],
+                  )
                 ],
-              )
+              ),
+              const Spacer()
             ],
           ),
         ),
