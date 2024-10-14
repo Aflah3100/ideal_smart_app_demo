@@ -5,6 +5,9 @@ class GroceryItemModel {
   double? oldPrice;
   double? newPrice;
   int? discountPercentage;
+  String? store;
+  String? location;
+  String? productDescription;
 
   GroceryItemModel(
       {this.imageURL,
@@ -12,7 +15,10 @@ class GroceryItemModel {
       this.companyProduced,
       this.oldPrice,
       this.newPrice,
-      this.discountPercentage});
+      this.discountPercentage,
+      this.store,
+      this.location,
+      this.productDescription});
 
   GroceryItemModel.fromJson(Map<String, dynamic> json) {
     imageURL = json['imageURL'];
@@ -21,6 +27,9 @@ class GroceryItemModel {
     oldPrice = json['oldPrice'];
     newPrice = json['newPrice'];
     discountPercentage = json['discountPercentage'];
+    store = json['store'];
+    location = json['location'];
+    productDescription = json['productDescription'];
   }
 
   Map<String, dynamic> toJson() {
@@ -31,6 +40,9 @@ class GroceryItemModel {
     data['oldPrice'] = oldPrice;
     data['newPrice'] = newPrice;
     data['discountPercentage'] = discountPercentage;
+    data['store'] = store;
+    data['location'] = location;
+    data['productDescription'] = productDescription;
     return data;
   }
 }

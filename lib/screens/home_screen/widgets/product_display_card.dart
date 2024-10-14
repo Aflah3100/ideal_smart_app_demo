@@ -14,9 +14,10 @@ class ProductDisplayCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, ProductDetailScreen.routeName);
+        Navigator.pushNamed(context, ProductDetailScreen.routeName,
+            arguments: product);
       },
       child: SizedBox(
         width: 160,

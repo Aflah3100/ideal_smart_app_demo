@@ -1,17 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:ideal_smart_app_demo/main.dart';
-import 'package:ideal_smart_app_demo/models/grocery_item_model.dart';
-import 'package:ideal_smart_app_demo/models/user_model.dart';
 import 'package:ideal_smart_app_demo/router/route_constants.dart';
-import 'package:ideal_smart_app_demo/screens/home_screen/widgets/circular_display_card.dart';
 import 'package:ideal_smart_app_demo/screens/home_screen/widgets/product_builder.dart';
 import 'package:ideal_smart_app_demo/screens/home_screen/widgets/product_categories_container.dart';
-import 'package:ideal_smart_app_demo/screens/home_screen/widgets/product_display_card.dart';
 import 'package:ideal_smart_app_demo/services/api_services/grocery_api_services.dart';
 import 'package:ideal_smart_app_demo/utils/app_colors.dart';
 import 'package:ideal_smart_app_demo/utils/app_fonts.dart';
-import 'package:ideal_smart_app_demo/utils/assets.dart';
 
 class HomeScreen extends StatelessWidget {
   static const routeName = RouteConstants.homeScreen;
