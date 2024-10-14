@@ -10,4 +10,8 @@ class Assets {
   static const bakeyImage = "assets/images/bakery.png";
   static const groceryItemsJson = "assets/json/grocery_items.json";
   static const topOfferItemsJson = "assets/json/top_offers_items.json";
+  static const idealMartBanner1 = "assets/images/idealmart_banner_1.jpg";
+  static const idealMartBanner2 = "assets/images/idealmart_banner_2.jpg";
+  static const idealMartBanner3 = "assets/images/idealmart_banner_3.jpg";
+  static const idealMartBanner4 = "assets/images/idealmart_banner_4.jpg";
 }

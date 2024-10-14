@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
                   );
                 } else if (snapshot.hasData && snapshot.data != null) {
                   //Logged-in
-                  return const HomeScreen();
+                  return  HomeScreen();
                 }
                 //Not-logged-in
                 return const LoginScreen();

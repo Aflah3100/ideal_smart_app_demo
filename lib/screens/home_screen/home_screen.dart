@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ideal_smart_app_demo/router/route_constants.dart';
+import 'package:ideal_smart_app_demo/screens/home_screen/widgets/image_banners_slider.dart';
 import 'package:ideal_smart_app_demo/screens/home_screen/widgets/product_builder.dart';
 import 'package:ideal_smart_app_demo/screens/home_screen/widgets/product_categories_container.dart';
 import 'package:ideal_smart_app_demo/screens/login_screen/login_screen.dart';
@@ -51,11 +52,29 @@ class HomeScreen extends StatelessWidget {
             //Top-container
             const ProductCategoriesContainer(),
 
+            SizedBox(
+              height: 10.w,
+            ),
             //Products-container
             Expanded(
                 child: SingleChildScrollView(
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: Text(
+                      "Special Deals for You",
+                      style: AppFonts.poppins(
+                          fontWeight: FontWeight.w500, fontSize: 16),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10.w,
+                  ),
+                  //Image-banners
+                  const ImageBannersSlider(),
+
                   //Special-Deal-Products
                   ProductBuilder(
                     title: "Special Deals",
