@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ideal_smart_app_demo/utils/app_fonts.dart';
 
-class LoginHeading extends StatelessWidget {
-  const LoginHeading({
+class DashedTitle extends StatelessWidget {
+  const DashedTitle({
     super.key,
+    required this.title,
   });
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +28,7 @@ class LoginHeading extends StatelessWidget {
               Container(
                 color: Colors.white,
                 child: Text(
-                  "Login to your account",
+                  title,
                   style: AppFonts.poppins(fontSize: 11.sp),
                 ),
               ),

@@ -68,7 +68,9 @@ class LoginScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           //Login-heading
-                          const LoginHeading(),
+                          const DashedTitle(
+                            title: "Login to your account",
+                          ),
 
                           //Email-text-field
                           InputTextField(
