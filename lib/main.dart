@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ideal_smart_app_demo/router/generate_route.dart';
 import 'package:ideal_smart_app_demo/screens/home_screen/home_screen.dart';
-import 'package:ideal_smart_app_demo/screens/signup_screen/sign_up_screen.dart';
+import 'package:ideal_smart_app_demo/screens/login_screen/login_screen.dart';
 import 'package:ideal_smart_app_demo/services/shared_preferences/shared_prefs.dart';
 
 void main() {
@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
                   return const HomeScreen();
                 }
                 //Not-logged-in
-                return const SignUpScreen();
+                return const LoginScreen();
               },
             ),
           );
