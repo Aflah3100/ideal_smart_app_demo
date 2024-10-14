@@ -1,0 +1,84 @@
+
+ [
+    {
+      "imageURL": "https://media.istockphoto.com/id/1365598324/vector/red-apple-isolated.jpg?s=612x612&w=0&k=20&c=l2Q-ih_PLDTYkfax3xVnjU61QP8dFyv8fDoKIm022FA=",
+      "itemName": "Apple",
+      "companyProduced": "Fresh Farms",
+      "oldPrice": 4.99,
+      "newPrice": 3.99,
+      "discountPercentage": 20
+    },
+    {
+      "imageURL": "https://t3.ftcdn.net/jpg/01/69/28/44/360_F_169284400_I6r6YfjM41HurcqAsWK65ceyDrKn4u3C.jpg",
+      "itemName": "Banana",
+      "companyProduced": "Tropical Harvest",
+      "oldPrice": 2.50,
+      "newPrice": 2.00,
+      "discountPercentage": 20
+    },
+    {
+      "imageURL": "https://static.vecteezy.com/system/resources/previews/002/267/879/large_2x/broccoli-isolated-on-white-background-free-photo.jpg",
+      "itemName": "Broccoli",
+      "companyProduced": "Green Valley",
+      "oldPrice": 3.00,
+      "newPrice": 2.50,
+      "discountPercentage": 17
+    },
+    {
+      "imageURL": "https://t4.ftcdn.net/jpg/00/29/78/85/360_F_29788505_PbGEDPBhQIxW2soJMOpLlYOybLrvPt2e.jpg",
+      "itemName": "Tomato",
+      "companyProduced": "Farm Fresh",
+      "oldPrice": 2.00,
+      "newPrice": 1.50,
+      "discountPercentage": 25
+    },
+    {
+      "imageURL": "https://t4.ftcdn.net/jpg/03/09/22/29/360_F_309222978_boIWb07TufCqJ8al1keo6nnXASPsXPsy.jpg",
+      "itemName": "Basmati Rice",
+      "companyProduced": "Golden Grain",
+      "oldPrice": 15.99,
+      "newPrice": 13.99,
+      "discountPercentage": 12
+    },
+    {
+      "imageURL": "https://img.freepik.com/premium-photo/olive-oil-bottle-white-background-from_908985-60254.jpg",
+      "itemName": "Olive Oil",
+      "companyProduced": "Pure Nature",
+      "oldPrice": 10.00,
+      "newPrice": 8.50,
+      "discountPercentage": 15
+    },
+    {
+      "imageURL": "https://www.shutterstock.com/image-photo/milk-glass-one-gallon-whole-260nw-1913410054.jpg",
+      "itemName": "Whole Milk",
+      "companyProduced": "Dairyland",
+      "oldPrice": 3.50,
+      "newPrice": 3.00,
+      "discountPercentage": 14
+    },
+    {
+      "imageURL": "https://media.istockphoto.com/id/157587362/photo/detailed-close-up-of-sliced-grain-bread-on-white-background.jpg?s=612x612&w=0&k=20&c=nr5f0Mb3Dx9RP_LmKKwlo6IlzDebfIdCbnERsnoSG94=",
+      "itemName": "Whole Wheat Bread",
+      "companyProduced": "Bakers Delight",
+      "oldPrice": 2.99,
+      "newPrice": 2.49,
+      "discountPercentage": 17
+    },
+    {
+      "imageURL": "https://media.istockphoto.com/id/467061077/photo/eggs-isolated-on-a-white-background.jpg?s=612x612&w=0&k=20&c=K6RZK8UR5hzHy4auNEKHV0EdkBVnVlyLlfBflpUXP-g=",
+      "itemName": "Organic Eggs",
+      "companyProduced": "Farm Fresh Eggs",
+      "oldPrice": 5.00,
+      "newPrice": 4.50,
+      "discountPercentage": 10
+    },
+    {
+      "imageURL": "https://media.istockphoto.com/id/495231784/photo/penne-pasta.jpg?s=612x612&w=0&k=20&c=s6i39tglMyw0sQVsJtZlYSxINgrfoMW8ACg0gS_1tuw=",
+      "itemName": "Pasta",
+      "companyProduced": "Italian Delights",
+      "oldPrice": 3.49,
+      "newPrice": 2.99,
+      "discountPercentage": 14
+    }
+    
+  ]

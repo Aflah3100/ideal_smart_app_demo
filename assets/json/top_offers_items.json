@@ -1,0 +1,42 @@
+[
+    {
+        "imageURL": "https://media.istockphoto.com/id/1194662606/photo/orange-isolated-on-white-background-clipping-path-full-depth-of-field.jpg?s=612x612&w=0&k=20&c=rhITc7KJiHKvRe_aVnC_3Tjae4B67MrvAcH6HpxC8xM=",
+        "itemName": "Orange",
+        "companyProduced": "Citrus Growers",
+        "oldPrice": 4.00,
+        "newPrice": 3.50,
+        "discountPercentage": 12
+    },
+    {
+        "imageURL": "https://img.freepik.com/premium-photo/fresh-potatoes-isolated-white-background_33736-2512.jpg",
+        "itemName": "Potato",
+        "companyProduced": "Farm Fresh",
+        "oldPrice": 2.50,
+        "newPrice": 2.00,
+        "discountPercentage": 20
+    },
+    {
+        "imageURL": "https://t4.ftcdn.net/jpg/05/00/78/17/360_F_500781753_EPE3cVItQkE2ARkgWUKm9DykXgDPPrvY.jpg",
+        "itemName": "Chicken Breast",
+        "companyProduced": "Meat Masters",
+        "oldPrice": 8.99,
+        "newPrice": 7.99,
+        "discountPercentage": 11
+    },
+    {
+        "imageURL": "https://img.freepik.com/premium-photo/fresh-salmon-fillet-with-basil-white-background_120872-2192.jpg",
+        "itemName": "Salmon Fillet",
+        "companyProduced": "Ocean's Bounty",
+        "oldPrice": 12.00,
+        "newPrice": 10.50,
+        "discountPercentage": 13
+    },
+    {
+        "imageURL": "https://img.freepik.com/premium-photo/isolated-white-background-bowl-greek-yogurt_1009218-771.jpg",
+        "itemName": "Greek Yogurt",
+        "companyProduced": "Yogurtland",
+        "oldPrice": 5.50,
+        "newPrice": 4.99,
+        "discountPercentage": 9
+    }
+]

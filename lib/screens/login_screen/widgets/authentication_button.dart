@@ -4,13 +4,14 @@ import 'package:ideal_smart_app_demo/utils/app_colors.dart';
 import 'package:ideal_smart_app_demo/utils/app_fonts.dart';
 
 class AuthenticationButton extends StatelessWidget {
-  const AuthenticationButton({
-    super.key,
-    required this.label,
-    required this.onTap,
-  });
+  AuthenticationButton(
+      {super.key,
+      required this.label,
+      required this.onTap,
+      this.isLoading = false});
   final String label;
   final void Function() onTap;
+  bool isLoading;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -22,10 +23,14 @@ class AuthenticationButton extends StatelessWidget {
             color: AppColors.primaryColor,
             borderRadius: BorderRadius.circular(5)),
         child: Center(
-          child: Text(
-            label,
-            style: AppFonts.poppins(color: Colors.white, fontSize: 11.sp),
-          ),
+          child: (!isLoading)
+              ? Text(
+                  label,
+                  style: AppFonts.poppins(color: Colors.white, fontSize: 11.sp),
+                )
+              : const CircularProgressIndicator(
+                  color: Colors.white,
+                ),
         ),
       ),
     );

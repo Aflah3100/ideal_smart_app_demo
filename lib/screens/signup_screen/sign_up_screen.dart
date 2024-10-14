@@ -1,11 +1,16 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ideal_smart_app_demo/models/user_model.dart';
 import 'package:ideal_smart_app_demo/router/route_constants.dart';
+import 'package:ideal_smart_app_demo/screens/home_screen/home_screen.dart';
 import 'package:ideal_smart_app_demo/screens/login_screen/login_screen.dart';
 import 'package:ideal_smart_app_demo/screens/login_screen/widgets/authentication_button.dart';
 import 'package:ideal_smart_app_demo/screens/login_screen/widgets/input_text_field.dart';
 import 'package:ideal_smart_app_demo/screens/login_screen/widgets/login_heading.dart';
 import 'package:ideal_smart_app_demo/screens/login_screen/widgets/secure_text_field.dart';
+import 'package:ideal_smart_app_demo/services/shared_preferences/shared_prefs.dart';
 import 'package:ideal_smart_app_demo/utils/app_colors.dart';
 import 'package:ideal_smart_app_demo/utils/app_fonts.dart';
 import 'package:ideal_smart_app_demo/utils/assets.dart';
@@ -40,6 +45,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
     confirmPasswordController.dispose();
     super.dispose();
   }
+
+  bool _isLoading = false;
 
   @override
   Widget build(BuildContext context) {
@@ -164,9 +171,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
                     //Retype-password-text-field
                     SecureTextField(
-                      validator: (confPassword) => confPassword!.isEmpty
-                          ? "Retype Password cannot be empty"
-                          : null,
+                      validator: (confPassword) {
+                        if (confPassword!.isEmpty) {
+                          return "Retype Password cannot be empty";
+                        } else if (passwordController.text != confPassword) {
+                          return "Password's doesn't match";
+                        }
+                        return null;
+                      },
                       controller: confirmPasswordController,
                       hintText: "Retype Password",
                       keyboardType: TextInputType.visiblePassword,
@@ -186,12 +198,31 @@ class _SignUpScreenState extends State<SignUpScreen> {
               //Signup-button
               AuthenticationButton(
                   label: "Signup",
-                  onTap: () {
-                    if (formKey.currentState!.validate()) {}
+                  isLoading: _isLoading,
+                  onTap: () async {
+                    if (formKey.currentState!.validate()) {
+                      //Signup-user
+                      setState(() {
+                        _isLoading = true;
+                      });
+                      final userModel = UserModel(
+                          email: emailController.text,
+                          password: passwordController.text);
+                      final result = await SharedPrefs.instance
+                          .saveUser(userModel: userModel);
+                      setState(() {
+                        _isLoading = false;
+                      });
+                      if (result) {
+                        Navigator.pushNamedAndRemoveUntil(
+                            context, HomeScreen.routeName, (route) => false);
+                      }
+                    }
                   }),
               SizedBox(
                 height: 20.h,
               ),
+
               //Login-text
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

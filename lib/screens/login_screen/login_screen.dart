@@ -1,20 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ideal_smart_app_demo/models/user_model.dart';
 import 'package:ideal_smart_app_demo/router/route_constants.dart';
+import 'package:ideal_smart_app_demo/screens/home_screen/home_screen.dart';
 import 'package:ideal_smart_app_demo/screens/login_screen/widgets/authentication_button.dart';
 import 'package:ideal_smart_app_demo/screens/login_screen/widgets/input_text_field.dart';
 import 'package:ideal_smart_app_demo/screens/login_screen/widgets/login_heading.dart';
 import 'package:ideal_smart_app_demo/screens/login_screen/widgets/secure_text_field.dart';
 import 'package:ideal_smart_app_demo/screens/signup_screen/sign_up_screen.dart';
+import 'package:ideal_smart_app_demo/services/shared_preferences/shared_prefs.dart';
 import 'package:ideal_smart_app_demo/utils/app_fonts.dart';
 import 'package:ideal_smart_app_demo/utils/assets.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   static const routeName = RouteConstants.loginScreen;
-  LoginScreen({super.key});
+  const LoginScreen({super.key});
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
   final emailController = TextEditingController();
+
   final passwordController = TextEditingController();
+
   final formKey = GlobalKey<FormState>();
+
+  bool _isLoading = false;
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -106,8 +126,27 @@ class LoginScreen extends StatelessWidget {
                               //Login-button
                               AuthenticationButton(
                                 label: 'Login',
+                                isLoading: _isLoading,
                                 onTap: () {
-                                  if (formKey.currentState!.validate()) {}
+                                  if (formKey.currentState!.validate()) {
+                                    //Login-user
+                                    setState(() {
+                                      _isLoading = true;
+                                    });
+                                    final userModel = UserModel(
+                                        email: emailController.text,
+                                        password: passwordController.text);
+                                    SharedPrefs.instance
+                                        .saveUser(userModel: userModel);
+                                    setState(() {
+                                      _isLoading = false;
+                                    });
+                                    Navigator.pushNamedAndRemoveUntil(
+                                      context,
+                                      HomeScreen.routeName,
+                                      (route) => false,
+                                    );
+                                  }
                                 },
                               ),
 
