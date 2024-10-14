@@ -8,13 +8,13 @@ import 'package:ideal_smart_app_demo/screens/signup_screen/sign_up_screen.dart';
 Route<dynamic> generateRoute(RouteSettings routeSettings) {
   switch (routeSettings.name) {
     case SignUpScreen.routeName:
-      return MaterialPageRoute(builder: (_) => SignUpScreen());
+      return MaterialPageRoute(builder: (_) => const SignUpScreen());
 
     case LoginScreen.routeName:
-      return MaterialPageRoute(builder: (_) => LoginScreen());
+      return MaterialPageRoute(builder: (_) => const LoginScreen());
 
     case HomeScreen.routeName:
-      return MaterialPageRoute(builder: (_) => HomeScreen());
+      return MaterialPageRoute(builder: (_) => const HomeScreen());
 
     case ProductDetailScreen.routeName:
       final product = routeSettings.arguments as GroceryItemModel;
