@@ -174,13 +174,15 @@ class ProductDetailScreen extends StatelessWidget {
                                     style: AppFonts.poppins(
                                         color: Colors.grey.shade600),
                                   ),
-                                  Text(
-                                    product.companyProduced ?? "",
-                                    maxLines: 2,
-                                    overflow: TextOverflow.clip,
-                                    style: AppFonts.poppins(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.w500),
+                                  Flexible(
+                                    child: Text(
+                                      product.companyProduced ?? "",
+                                      maxLines: 2,
+                                      overflow: TextOverflow.clip,
+                                      style: AppFonts.poppins(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.w500),
+                                    ),
                                   )
                                 ],
                               ),
@@ -228,13 +230,16 @@ class ProductDetailScreen extends StatelessWidget {
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
                                     const Icon(Icons.storefront_outlined),
-                                    Text(
-                                      "  ${product.store ?? ""}",
-                                      maxLines: 1,
-                                      overflow: TextOverflow.clip,
-                                      style: AppFonts.poppins(
-                                          color: Colors.pink,
-                                          fontWeight: FontWeight.w500),
+                                    Flexible(
+                                      child: Text(
+                                        " ${product.store ?? ""}",
+                                        maxLines: 2,
+                                        textAlign: TextAlign.left,
+                                        overflow: TextOverflow.ellipsis,
+                                        style: AppFonts.poppins(
+                                            color: Colors.pink,
+                                            fontWeight: FontWeight.w500),
+                                      ),
                                     )
                                   ],
                                 ),
@@ -247,13 +252,15 @@ class ProductDetailScreen extends StatelessWidget {
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
                                     const Icon(Icons.pin_drop_outlined),
-                                    Text(
-                                      "  ${product.location ?? ""}",
-                                      maxLines: 1,
-                                      overflow: TextOverflow.clip,
-                                      style: AppFonts.poppins(
-                                          color: Colors.pink,
-                                          fontWeight: FontWeight.w500),
+                                    Flexible(
+                                      child: Text(
+                                        " ${product.location ?? ""}",
+                                        maxLines: 2,
+                                        overflow: TextOverflow.clip,
+                                        style: AppFonts.poppins(
+                                            color: Colors.pink,
+                                            fontWeight: FontWeight.w500),
+                                      ),
                                     )
                                   ],
                                 ),
